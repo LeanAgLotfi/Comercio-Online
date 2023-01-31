@@ -1,5 +1,5 @@
-import mongoose from "mongoose";
-import { options } from "./options.js";
+const mongoose = require("mongoose");
+const options =require( "./options.js");
 //conectamos a la base de datos
 mongoose.set('strictQuery', false);
 mongoose.connect(options.mongoDb.url, (err) => {

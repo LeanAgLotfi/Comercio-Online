@@ -1,4 +1,4 @@
-import { cartModel } from '../models/cart.model';
+const cartModel = require('../../models/cart.model');
 
 class CartManagerMongo {
 
@@ -46,4 +46,4 @@ class CartManagerMongo {
 }
 
 
-export {CartManagerMongo};
+module.exports =  CartManagerMongo;

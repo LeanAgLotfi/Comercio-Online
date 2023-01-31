@@ -1,7 +1,7 @@
-const { Router } = require('express')
-const productsRoutes = require('./Products/prod.routes')
-const cartRoutes = require('./Cart/cart.routes')
-const chatRoutes = require('./Chat/chat.routes')
+const { Router } = require('express');
+const productsRoutes = require('./Products/prod.routes');
+const cartRoutes = require('./Cart/cart.routes');
+const chatRoutes = require('./Chat/chat.routes');
 
 const router = Router()
 

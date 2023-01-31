@@ -1,4 +1,4 @@
-import mongoose from "mongoose";
+const mongoose = require('mongoose')
 
 const messageCollection = 'messages'
 
@@ -13,4 +13,6 @@ const messageSchema = new mongoose.Schema({
     }
 })
 
-export const messageModel = mongoose.model(messageCollection, messageSchema)
+const messageModel = mongoose.model(messageCollection, messageSchema);
+
+module.exports = messageModel;
