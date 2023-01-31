@@ -1,5 +1,5 @@
 nav {
-    background-color: #00796b;
+    background-color: #3ca9e7;
   }
   
   h1,
@@ -40,14 +40,14 @@ nav {
     justify-content: center;
     flex-direction: column;
     gap: 64px;
-    background-color: rgba(255,255,255,0.75);
+    background-color:rgba(193, 235, 238, 0.75) ;
     border-radius: 15px;
   }
   
   .app-chat {
     width: 100%;
     height: 70%;
-    background-color: rgba(255, 255, 255, 0.75);
+    background-color:rgba(193, 235, 238, 0.75) ;
     padding: 16px;
   }
   
@@ -87,12 +87,12 @@ nav {
   
   .app-chat__messages-user-box {
     align-items: flex-end;
-    background-color: #40c4ff;
+    background-color: #6ef8a8;
   }
   
   .app-chat__messages-me-box {
     align-items: flex-start;
-    background-color: #69f0ae;
+    background-color: #3e9bf1;
   }
   
   .app-chat__messages-user-box--name,
