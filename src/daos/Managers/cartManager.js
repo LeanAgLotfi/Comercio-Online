@@ -1,7 +1,5 @@
 const fs = require('fs/promises')
 const { existsSync } = require('fs');
-import path from "path";
-import __dirname from "../../utils.js";
 
 class CartManager {
     constructor(path){
@@ -91,4 +89,4 @@ class CartManager {
     }
 }
 
-export {CartManager};
+module.exports = CartManager;

@@ -1,6 +1,9 @@
-import express from "express";
-import {router as AppRouter} from "./routes/app.routes";
-import "./config/dbConfig.js";
+const express = require('express')
+const AppRouter = require('./routes/app.routes')
+const path = require('path')
+const handlebars = require('express-handlebars')
+const { Server } = require('socket.io')
+require('./config/dbConfig')
 
 const app = express();
 const PORT = 8080;

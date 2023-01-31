@@ -1,5 +1,5 @@
-import express from "express";
-import { ProductMongoManager } from "../../daos/mongoManagers/mongoManager.js";
+const express = require('express')
+const ProductMongoManager = require("../../daos/mongoManagers/mongoManager.js")
 //import {options} from "../../config/options.js";
 //import { ProdFileManager } from "../../daos/Managers/productManagers.js";
 
@@ -97,4 +97,4 @@ router.delete("/",async(req,res)=>{
     }
 });
 
-export {router};
+module.exports = router;

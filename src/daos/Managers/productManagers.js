@@ -1,6 +1,6 @@
-import fs from "fs";
-import path from "path";
-import __dirname from "../../utils.js";
+const __dirname = require('../../utils')
+const fs = require('fs/promises')
+const path = require('path');
 
 class ProductFileManager {
 
@@ -94,4 +94,4 @@ class ProductFileManager {
     }
 }
 
-export {ProductFileManager};
+module.exports = ProductFileManager;

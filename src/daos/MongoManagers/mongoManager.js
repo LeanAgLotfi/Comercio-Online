@@ -1,4 +1,4 @@
-import { ProductModel } from "../../models/product.models.js";
+const ProductModel = require("../../models/product.models") ;
 
 class ProductMongoManager {
     async getAll() {
@@ -57,4 +57,4 @@ class ProductMongoManager {
 
 }
 
-export {ProductMongoManager}
+module.exports = ProductMongoManager;
