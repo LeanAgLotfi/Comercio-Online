@@ -1,11 +1,6 @@
 const socket = io()
-
-// START Utility functions
 const getHtml = (template) => template.join("\n");
-
-// const renderMessage = (username, message) => {
-//   return `<span>${username} dice: ${message}</span>`
-// }
+let user;
 
 const renderMeMessage = (message) => {
   const html = getHtml([
@@ -30,15 +25,11 @@ const renderUserMessage = (username, message) => {
   ]);
   return html;
 };
-// END Utility functions
 
-let user;
-
-// DOM Elements
 const chatBox = document.getElementById('chat-box');
 const messagesBox = document.getElementById('messages-box');
 
-// Toast
+
 const Toast = Swal.mixin({
   toast: true,
   position: 'top-end',
@@ -50,6 +41,8 @@ const Toast = Swal.mixin({
     toast.addEventListener('mouseleave', Swal.resumeTimer)
   }
 })
+
+
 
 // Authentication
 Swal.fire({
@@ -67,7 +60,6 @@ Swal.fire({
   socket.emit('login', user);
 });
 
-// Socket Logic
 
 // Socket Emitters
 chatBox?.addEventListener('keyup', (event) => {
