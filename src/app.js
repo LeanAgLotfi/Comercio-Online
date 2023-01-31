@@ -1,5 +1,6 @@
 const express = require('express')
 const AppRouter = require('./routes/app.routes')
+const IndexRouter = require('./routes/index.routes')
 const path = require('path')
 const handlebars = require('express-handlebars')
 const { Server } = require('socket.io')
@@ -7,7 +8,6 @@ require('./config/dbConfig')
 
 const app = express();
 const PORT = 8080;
-
 
 
 app.use(express.json());
@@ -38,3 +38,4 @@ io.on('connection', (socket)=>{
 
 //rutas
 app.use("/app", AppRouter); 
+app.use("/view", IndexRouter); 
