@@ -7,18 +7,14 @@ const router = Router()
 router.get('/', async (req, res) => {
     const products = await productModel.find().lean()
     res.render('index', {
-        title: "E-commerce",
-        styles:"index.css",
+        title: "E-commerce 🍃",
         products
     })
 })
 
 router.get('/chat', async (req,res)=>{
     const messages = await messageModel.find().lean()
-    res.render('chat', {
-        title: "Super Chat!",
-        styles:"chat.css",
-        messages})
+    res.render('chat', {messages})
 })
 
 

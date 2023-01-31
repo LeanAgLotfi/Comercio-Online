@@ -12,7 +12,7 @@ const PORT = 8080;
 
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
-app.use(express.static("public"));
+app.use('/statics', express.static(path.resolve(__dirname, '../public')))
 
 app.engine('handlebars', handlebars.engine())
 app.set('views', path.resolve(__dirname, './views'));
@@ -25,17 +25,24 @@ const httpServer = app.listen(PORT, ()=>{
 
 const io = new Server(httpServer)
 
+// Sockets
+const messages = [];
 
-io.on('connection', (socket)=>{
-    console.log("new client connected");
-    app.set('socket', socket)
-    app.set('io', io)
-    socket.on('login', user =>{
-        socket.emit('welcome', user)
-        socket.broadcast.emit('new-user', user)
-    })
-})
+io.on('connection', (socket) => {
+  console.log("New client connected!");
+  
+  socket.on('login', (user) => {
+    socket.emit('message-logs', messages);
+    socket.emit('welcome', user);
+    socket.broadcast.emit('new-user', user);
+  });
+  
+  socket.on('message', (data) => {
+    messages.push(data);
+    io.emit('message-logs', messages);
+  })
+});
 
 //rutas
 app.use("/app", AppRouter); 
-app.use("/view", IndexRouter); 
+app.use("/home", IndexRouter); 
